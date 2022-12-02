@@ -1,0 +1,184 @@
+\documentclass[12pt,fleqn]{article}
+
+\usepackage{amsmath,amssymb,amsthm,enumerate,color,graphics,epsfig,url}
+
+\usepackage{cmap}
+
+\usepackage[pdftex,
+colorlinks,%
+linkcolor=blue,citecolor=red,urlcolor=blue,
+hyperindex,%
+plainpages=false,%
+bookmarksopen,%
+bookmarksnumbered,%
+unicode]{hyperref}
+\usepackage [dvipsnames] {xcolor}
+\usepackage{pgf,tikz,pgfplots,tikz-3dplot}
+\usetikzlibrary{calendar,folding}
+\usetikzlibrary{arrows,patterns,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usetikzlibrary{calc,3d,intersections,shapes}
+%\pgfplotsset{compat=1.11}
+\usepgfplotslibrary{polar}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ukrainian]{babel}
+
+\setlength{\textwidth}{160.0mm}
+\setlength{\textheight}{240.0mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\topmargin}{-18mm}
+\setlength{\parindent}{5.0mm}
+
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem*{theoremN}{Теорема}
+\newtheorem{proposition}{Твердження}[section]
+\newtheorem{statement}{Твердження}[section]
+\newtheorem{lemma}{Лема}[section]
+\newtheorem{corollary}{Наслідок}[section]
+
+{\theoremstyle{definition}
+\newtheorem{definition}{Означення}[section]
+\newtheorem{example}{Приклад}[section]
+\newtheorem{problem}{Задача}[section]
+\newtheorem*{problem*}{Задача}
+\newtheorem{question}{Питання}[section]
+
+}
+
+\usepackage[labelsep=period]{caption}
+\numberwithin{figure}{section}
+\numberwithin{equation}{section}
+
+\begin{document}
+
+\vspace{50mm}
+
+\begin{center}
+\Large\bf
+Конспект\\[50mm]
+{\Huge}
+\end{center}
+
+\vspace{50mm}
+
+\newpage
+
+\tableofcontents
+
+%\listoffigures
+
+\newpage
+
+
+\section{189}\label{189}\allowdisplaybreaks
+
+! $(i-1)$ ! $X_{i}^{*}$.
+$$N_{t}^{*}=\max\{k: T_{k}^{*}\leq t\}$$
+! $t$. ! $N^{*}=(N_{t}^{*}:t\geq 0)$ ! $\lambda$, !.
+
+\begin{example}
+    !
+\end{example}
+
+\begin{problem}
+    ! $M$ ! $N$ !, $M$ ! $\lambda$ ! $N$ ! $\mu$. ! $M + N = (M_t + N_t : t \geq 0)$ ! $\lambda + \mu$. !
+\end{problem}
+
+\begin{problem}
+  ! $T_i$ ! $N$, ! $N_t < k$ ! $T_k > t$. ! $t \rightarrow \infty$,
+  $$ \mathbb{P}(\frac{N_t-\lambda t}{\sqrt{\lambda t}}\leq u)\rightarrow \int_{-\infty}^{u}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}v^2}\, \mathrm{d}v \quad \text{для $u \in \mathbb{R}.$} $$
+  !
+\end{problem}
+
+\begin{problem}
+  ! $\lambda$
+\end{problem}
+
+\subsection{!}\label{11.4}
+! $t=0$ ! $I$
+
+Division rate! $t$ ! $(t, t + h)$ ! $\lambda (>0)$
+
+! $(t, t+ h]$ ! $\lambda h + o(h)$
+! $(t, t+ h]$ ! $1 - \lambda h + o(h)$
+
+Independence! $t$ ! $t$.
+
+! $t$ ! $\lambda h + o(h)$ ! $t+h$, ! $1 - \lambda h + o(h)$ ! $t+h$, ! $o(h)$ ! $t+h$. ! $M_t$ ! $t$. ! $M_{t+h}$ ! $M_t$. ! $M_t = k$. ! $M_{t+h}\geq k$, !
+
+\begin{equation}
+\mathbb{P}(M_{t+h}=k\big| M_t=k) = \mathbb(P)\text{!}
+\\=[1-\lambda h + o(h)]^k
+\\1 - \lambda k h + o(h).
+\end{equation}
+!,
+
+\begin{equation}
+\mathbb{P}(M_{t+h}=k+1 \big | M_t = k) = \mathbb{P}(\text{!})\\
+=\bigg(\begin{matrix} k \\ 1 \end{matrix}\bigg)[\lambda h + o(h)][1-\lambda h + o(h)]^{k-1}\\
+\lambda k h + o(h),
+\end{equation}
+
+! $k$ !
+\begin{equation}
+\mathbb{P}(M_{t+h}\geq k + 2 \big| M_t = k) = 1 - \mathbb{P}(M_{t+h} is k or k+1 \big| M_t=k)
+\\= 1- [\lambda kh + o(h)] - [1-\lambda kh + o(h)]
+\\= o(h).
+\end{equation}
+
+! $M$ ! $N$ ! $M_t = k$ ! $M_{t+h} = k$ ! $M_{t+h} = k+1$ ! $1-o(h)$. ! $M$ ! $N$ ! $M$ ! $M$ ! $M$.
+
+\begin{theorem}
+  ! $M_0$ ! $t>0$ !
+  \begin{equation}\label{11.37}
+    \mathbb{P}(M_t=k) = \bigg(\begin{matrix}
+                          k-1 \\
+                          I-1
+                        \end{matrix}\bigg) e^{-I\lambda t}(1-e^{\lambda t})^{k-I}\quad \text{for $k=I, I+1, \dots$}
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  !
+  $$p_k(t)=\mathbb{P}(M_t=k)$$
+  ! $p_I(t),p_{I+1}(t), \dots$ ! $h>0$,
+  \[\mathbb{P}(M_{t+h}=k)=\sum_{i}\mathbb{P}(M_P{t+h}=k\big|M_i=i)\mathbb{P}(M_i=i)
+    \\=\left[1-\lambda kh +o(h)\right]\mathbb{P}(M_t=k)+\left[\lambda(k-1)h+o(h)\right]\mathbb{P}(M_t=k-1)+o(h)\]
+  !
+  \[p_k(t+h)-p_k(t)=\lambda(k-1)hp_{k-1}(t)-\lambda khp_k(t) + o(h). \]
+  ! $h$ ! $h\downarrow0$
+  \[p_{k}'(t)=\lambda(k-1)p_{k-1}(t)-\lambda kp_k(t) \quad \text{для } k=I, I+1, \dots\]
+  ! $p_{I}'(t)$ ! $p_{I-1}(t)$ ! $p_{I-1}(t)=0$ ! $t$. !
+  \begin{equation}\label{11.39}
+  p_{k}(0)=\begin{matrix}
+             1 \quad \text{якщо } k=I, \\
+             0 \quad \text{якщо } k\neq I.
+           \end{matrix}
+  \end{equation}
+  ! $p_{I}(t)$, ! $p_{I+1}(t), \dots,$ !.
+  
+  ! $s^k$ ! $k$ !
+  \begin{equation}\label{11.40}
+    \frac{\mathrm{d}G}{\mathrm{d}t}=\lambda s(s-1)\frac{\mathrm{d}G}{\mathrm{d}s}
+  \end{equation}
+  ! $G=G(s, t)$ !
+  $$G(s,t)=\sum_{k=I}^{\infty}p_k(t)s^k.$$
+  ! $G(s,0)=s^I$.
+\end{proof}
+
+! $M_t$ ! $M_t$ !
+
+$$\mu(t)=\mathbb(E)(M_t)=\sum_{k=I}^{\infty}kp_k(t),$$
+!
+\begin{equation}\label{11.41}
+  \mu'(t)=\sum_{k=I}^{\infty}kp_k'(t)=\sum_{k=I}^{\infty}k\left[\lambda(k-1)p_{k-1}(t)-\lambda k p_k(t) \right]
+\end{equation}
+!
+\begin{equation}\label{11.42}
+  \mu'(t)=\lambda\sum_{k=I}^{\infty}\left[(k+1)kp_{k}(t)-k^2p_k(t) \right]
+\end{equation}
+\begin{equation}\label{11.43}
+  = \lambda \sum_{k=I}^{\infty} kp_k(t)=\lambda\mu(t),
+\end{equation}
+\end{document} 
